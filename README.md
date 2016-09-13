@@ -66,16 +66,20 @@ This is some of my own to react-native learning footprint and some of his own re
         * 按住Shift键右键打开命令行窗口，命令行输入：npm install -g react-native-cli
         * 验证是否安装成功：react-native -v
     * 七、创建自己的React Native项目
-        >* 1、想在哪里创建项目就在哪儿按住Shift键右键打开命令行窗口，命令行输入：react-native init HelloWorld</br>
-        >* 2、说明：HelloWorld为自己的项目名，自拟，创建工程时间较长，耐心等待，首次创建可能需要下载gradle2.4文件还有jcenter等等依赖库（自备梯子）</br>
+
+        * 1、想在哪里创建项目就在哪儿按住Shift键右键打开命令行窗口，命令行输入：react-native init HelloWorld</br>
+        * 2、说明：HelloWorld为自己的项目名，自拟，创建工程时间较长，耐心等待，首次创建可能需要下载gradle2.4文件还有jcenter等等依赖库（自备梯子）</br>
+
     * 八、运行Packager Server
-        >* 1、命令行cd进入自己的工程(HelloWorld)目录或者直接进入(需要按住Shift键右键打开命令行窗口),输入命令：react-native start</br>
-        >* 2、说明：Packager包服务要一直开启</br>
+        * 1、命令行cd进入自己的工程(HelloWorld)目录或者直接进入(需要按住Shift键右键打开命令行窗口),输入命令：react-native start
+        * 2、说明：Packager包服务要一直开启</br>
+
     * 九、运行自己的React Native项目
-        >* 1、命令行cd进入自己的工程(HelloWorld)目录或者直接进入(需要按住Shift键右键打开命令行窗口),输入命令：react-native run-android</br>
-        >* 2、说明：期间有可能会报一些error，也有可能不会出现</br>
+        * 1、命令行cd进入自己的工程(HelloWorld)目录或者直接进入(需要按住Shift键右键打开命令行窗口),输入命令：react-native run-android
+        * 2、说明：期间有可能会报一些error，也有可能不会出现
+
     * 十、常见错误解决方案(十全十美,欢迎楼下补充...)
-        >* 待续...</br>
+        * 待续...</br>
 
 
 ## React Native屏幕适配
