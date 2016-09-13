@@ -26,16 +26,17 @@ This is some of my own to react-native learning footprint and some of his own re
         * [官网下载](http://developer.android.com/sdk/index.html)
         * 安装步骤：(忽略，自行百度，下一步下一步...)
         * 环境变量配置：
+        
         >* 1、在系统变量中添加：ANDROID_HOME，值：D:\sdk (这个是自己的sdk所在目录)</br>
         >* 2、在系统变量Path中添加两个变量值：%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools
-    * 四、安装C++环境
+    * 四、安装C++环境:
         * 首先查看自己计算机是否已经安装有Microsoft Visual C++ xxx Redistributable运行库,xxx为2013版本或者2015版本
         * 1、微软官方下载地址：
         >* [2013版本](http://www.microsoft.com/zh-CN/download/details.aspx?id=40784)
         >* [2015版本](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
 
-        * 2、安装步骤：（忽略，下一步下一步...）
-        * 3、可选项：(安装Visual C++ Build Tools 或者 Visual Studio 2015，推荐前者，后者包太大了！！！)
+        >* 2、安装步骤：（忽略，下一步下一步...）
+        >* 3、可选项：(安装Visual C++ Build Tools 或者 Visual Studio 2015，推荐前者，后者包太大了！！！)
         >* 安装前提：.NET Framework 4.5.1 需要最低版本是4.5.1（控制面板卸载程序可看）</br>
         >>* [官网下载](http://landinghub.visualstudio.com/visual-cpp-build-tools)Visual C++ Build Tools</br>
         >>* [官网下载](https://www.visualstudio.com/products/visual-studio-community-vs) Visual Studio 2015</br>
