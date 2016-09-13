@@ -103,7 +103,7 @@ This is some of my own to react-native learning footprint and some of his own re
     1. 在style样式中
     1. 例如：设置View的高度为150px(切图上的px值)
 
-      ```
+      ```javascript
       //导入
       import p from '../utils/Transform';
 
@@ -142,7 +142,7 @@ This is some of my own to react-native learning footprint and some of his own re
     1. photo
     1. code
 
-      ```
+      ```javascript
       function p(n) {
           const deviceWidth = Dimensions.get('window').width;
           return Math.round((n / 3) * (PixelRatio.getPixelSizeForLayoutSize(deviceWidth) / PixelRatio.get()) / 360);
