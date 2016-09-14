@@ -13,6 +13,12 @@ This is some of my own to react-native learning footprint and some of his own re
   - [flexBox盒子模型及布局](#flexBox盒子模型及布局)
 - React Native 学习资料
   - [文档类](#文档类)
+  - [组件类](#组件类)
+  - [专题类](#专题类)
+  - [语法类](#语法类)
+  - [布局类](#布局类)
+  - [架构类](#架构类)
+  - [工具类](#工具类)
 
 ## React Native环境安装
 ###  Windows环境下React Native环境配置详解
@@ -414,10 +420,65 @@ This is some of my own to react-native learning footprint and some of his own re
 ## React Native 学习资料
 ### 文档类
 
-    * [React Native官网](https://facebook.github.io/react-native/)
-    * [React nNative中文网](http://reactnative.cn/)
-    * [React Native代码编写规范](https://github.com/sunnylqm/react-native-coding-style)
+  * [React Native官网](https://facebook.github.io/react-native/)
+  * [React nNative中文网](http://reactnative.cn/)
+  * [React Native Training](http://www.jianshu.com/p/646c5fbd9659)
+  * [React Native Awesome](https://github.com/jondot/awesome-react-native)
+
+### 组件类
+  
+  * [React Native组件集合](https://react.parts/native)
+  * [ReactNative组件架构设计](https://segmentfault.com/a/1190000004161358)
+  * [React Native所有开源组件](https://js.coach/react-native)
+  * [React Native控件之Touchable*系列组件详解](http://blog.csdn.net/developer_jiangqq/article/details/50630984)
+
+### 专题类
     
+  * [React Native专题](http://www.lcode.org/react-native/)
+  * [React Native技术周报](http://www.lcode.org/category/react-native-zong/react-native%e6%8a%80%e6%9c%af%e5%91%a8%e6%8a%a5/)
+  * [React Native样式表](http://blog.csdn.net/sbsujjbcy/article/details/50017029)
+  * [React Native学习指南](http://www.tuicool.com/articles/zaInUbA)
+  * [深入浅出React Native](https://zhuanlan.zhihu.com/p/19996445)
+  * [React Native获取不同屏幕的像素密度](http://blog.csdn.net/u013531824/article/details/51013970)
+  * [React Native页面跳转](http://blog.csdn.net/huaheshangxo/article/details/50926946)
+  * [React Native热加载原理](http://www.tuicool.com/articles/myYzmqB)
+  * [React Native键盘遮挡输入框](http://www.bubuko.com/infodetail-1302049.html)
+  * [React Native生命周期详解](http://www.jianshu.com/p/986bcbcd02aa)
+  * [React Native生命周期](http://blog.csdn.net/ElinaVampire/article/details/51813677)
+  * [用纯Javascript实现React Native的文件上传](http://www.csdn.net/article/a/2016-05-10/15838051)
+  * [React Native中this详解](http://blog.csdn.net/u010046908/article/details/50812572)
+  * [React Native中bind以及控件显示隐藏和返回键](http://blog.csdn.net/rainmeterlinux/article/details/50774633)
+  * [Init指定特定React-Native版本](http://www.jianshu.com/p/646c5fbd9659)
+  * [React nNative开发论坛](http://www.reactnative.vip/)
+
+### 语法类
+
+  * [React Native代码编写规范](https://github.com/sunnylqm/react-native-coding-style)
+  * [ES5与ES6写法对照表](http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8)
+  * [ECMAScript 6入门](http://es6.ruanyifeng.com/#README)
+  * [ECMAScript 6扫盲](http://www.barretlee.com/blog/2016/07/09/a-kickstarter-guide-to-writing-es6/)
+  * [ES6:ES7中的6种this绑定方法](http://www.ido321.com/1670.html)
+  * [JavaScript ES6箭头函数指南](https://segmentfault.com/a/1190000003781467)
+
+### 布局类
+
+  * [FleBox盒子模型](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+  * [CSS学习网站](http://www.css88.com/)
+  * [FlexBox Guide Training](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+  * [React Native自适应布局方案](https://segmentfault.com/a/1190000004878644)
+
+### 架构类
+
+  * [Redux架构](http://www.jianshu.com/p/14933fd9c312)
+  * [Cycle.js架构](http://cycle.js.org/)
+  * [Redux中文文档](http://cn.redux.js.org/)
+  * [React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
+  * [React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html)
+  * [Redux基本使用](http://v.ku6.com/show/XPQZ9Ir3aSw3KNpO12tmEg...html?from=my)
+
+### 工具类
+
+  * [ReactNative WebStorm基本配置](http://blog.csdn.net/gz_jero/article/details/51503374)
 
 
 **[⬆ 回到目录](#内容目录)**
