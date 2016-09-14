@@ -173,13 +173,13 @@ This is some of my own to react-native learning footprint and some of his own re
   - **getDefaultProps**
     * 注意：ES6写法
 
-      ```javascript
-        static get defaultProps() {
-        return {
-            key: 'value'
+    ```javascript
+      static get defaultProps() {
+          return {
+              key: 'value'
           };
-        }
-      ````
+      }
+    ````
 
     * 在组件创建之前，会先调用这个方法，全局调用一次。
 
