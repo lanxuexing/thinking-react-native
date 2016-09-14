@@ -21,6 +21,8 @@ This is some of my own to react-native learning footprint and some of his own re
   - [工具类](#工具类)
 - React Native 小功能
   - [style的三种写法](#style的三种写法)
+  - [绑定this的三种方式](#绑定this的三种方式)
+  - [Navigator路由配置和重写物理Back键简单封装](#Navigator路由配置和重写物理Back键简单封装)
 
 ## React Native环境安装
 ###  Windows环境下React Native环境配置详解
@@ -489,6 +491,80 @@ This is some of my own to react-native learning footprint and some of his own re
   1. `内连方式 style={{flex:1,borderColor:'red'}}`
   1. `包裹方式 style={[styles.style1,styles.style2]}`
   1. `包裹样式和内连 style={[styles.style1,{flex:1,borderWidth:1}]}`
+
+### 绑定this的三种方式
+
+  1. `this.onPageScroll.bind(this)`
+  1. `()=>this.onPageScroll()` 
+  1. `this.onPageScroll= this.onPageScroll.bind(this)`  注：构造函数中
+
+### Navigator路由配置和重写物理Back键简单封装
+
+  * 代码演示
+
+  ```javascript
+    import React, {Component} from 'react';
+    import {
+        Navigator,
+        Platform,
+        BackAndroid
+    } from 'react-native';
+
+    import Example from './Example';
+
+    export default class App extends Component {
+
+        constructor(props) {
+            super(props);
+            this.onBackAndroid = this.onBackAndroid.bind(this);
+        }
+
+        componentWillMount() {
+            if (Platform.OS === 'android') {
+                BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
+            }
+        }
+
+        componentWillUnmount() {
+            if (Platform.OS === 'android') {
+                BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
+            }
+        }
+
+        onBackAndroid() {
+            const navigator = this.refs.navigator;
+            const routers = navigator.getCurrentRoutes();
+            console.log('当前路由长度：' + routers.length);
+            if (routers.length > 1) {
+                navigator.pop();
+                return true;
+            }
+            return false;
+        };
+
+        render() {
+            let defaultName = 'Example';
+            let defaultComponent = Example;
+            return (
+                    <Navigator
+                        initialRoute={{ name: defaultName, component: defaultComponent }}
+                        ref='navigator'
+                        configureScene={(route) => {
+                            return Navigator.SceneConfigs.FadeAndroid;
+                        } }
+                        renderScene={(route, navigator) => {
+                            let Component = route.component;
+                            return <Component {...route.params} navigator={navigator} />
+                        } }
+                    />
+            );
+        }
+    }
+  ```
+
+  * 图文讲解
+
+  ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/LifeCycle/imgs/Navigator.png)
 
 
 **[⬆ 回到目录](#内容目录)**
