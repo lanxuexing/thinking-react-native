@@ -414,9 +414,9 @@ This is some of my own to react-native learning footprint and some of his own re
 ## React Native 学习资料
 ### 文档类
 
-    - **[React Native官网]**(https://facebook.github.io/react-native/)
-    - [React nNative中文网](http://reactnative.cn/)
-    - [React Native代码编写规范](https://github.com/sunnylqm/react-native-coding-style)
+    * [React Native官网](https://facebook.github.io/react-native/)
+    * [React nNative中文网](http://reactnative.cn/)
+    * [React Native代码编写规范](https://github.com/sunnylqm/react-native-coding-style)
     
 
 
