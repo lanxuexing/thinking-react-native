@@ -322,9 +322,10 @@ This is some of my own to react-native learning footprint and some of his own re
     * Flexbox布局的主体思想是元素可以改变大小以适应可用空间，当可用空间变大，Flex元素将伸展大小以填充可用空间，当Flex元素超出可用空间时将自动缩小。 
     * 按照伸缩流的方向布局，伸缩容器有主轴和交叉轴组成，主轴既可以是水平轴，也可以是垂直轴。
 
-  - **FlexBox的属性(React Native支持的)
+  - * FlexBox的属性(React Native支持的)
     * flex:1
       * 块级伸缩容器
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flex1.png)
 
       ```javascript
@@ -354,13 +355,16 @@ This is some of my own to react-native learning footprint and some of his own re
     * flexDirection:'row'|'column' 
       * 指定主轴的方向，它决定了自检内部的子组件是如何排列的，如果在View中没有定义flexDirection,则取默认值column
       * row：主轴为水平方向，起点在左端
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexDirection-row.png)
 
       * column：主轴为垂直方向，起点在上沿。
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexDirection-colume.png)
 
     * justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around'
       * 定义在一个方向上如何排列子组件
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/justifyContent.png)
 
       ```
@@ -373,6 +377,7 @@ This is some of my own to react-native learning footprint and some of his own re
 
     * alignItems:'flex-start'|'flex-end'|'center'|'stretch'
       * 定义了View组件中所有组件的对齐规则
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/alignItem.png)
 
       ```
@@ -384,16 +389,20 @@ This is some of my own to react-native learning footprint and some of his own re
 
     * alignSelf:'auto'|'flex-start'|'flex-end'|'center'|'stretch'
       * 让组件忽略它的父组件样式中alignItems键的取值，而对应该组件使用alignSelf键对应的规则
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/alignSelf.png)
 
     * flexWrap:'wrap'|'nowrap'
       * 在默认的情况下，组件中的子组件按照flexDirection键决定的方向一直排列下去，即使超出了该方向的宽度或者高度也不管，flexWrap的默认值是nowrap,wrap为自动换行
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexWrap.png)
 
       * nowrap 
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexWrap-nowrap.png)
 
       * wrap
+
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexWrap-wrap.jpg)
 
 
