@@ -19,6 +19,8 @@ This is some of my own to react-native learning footprint and some of his own re
   - [布局类](#布局类)
   - [架构类](#架构类)
   - [工具类](#工具类)
+- React Native 小功能
+  - [style的三种写法](#style的三种写法)
 
 ## React Native环境安装
 ###  Windows环境下React Native环境配置详解
@@ -421,7 +423,7 @@ This is some of my own to react-native learning footprint and some of his own re
 ### 文档类
 
   * [React Native官网](https://facebook.github.io/react-native/)
-  * [React nNative中文网](http://reactnative.cn/)
+  * [React Native中文网](http://reactnative.cn/)
   * [React Native Training](http://www.jianshu.com/p/646c5fbd9659)
   * [React Native Awesome](https://github.com/jondot/awesome-react-native)
 
@@ -479,6 +481,14 @@ This is some of my own to react-native learning footprint and some of his own re
 ### 工具类
 
   * [ReactNative WebStorm基本配置](http://blog.csdn.net/gz_jero/article/details/51503374)
+
+
+## React Native 小功能
+### style的三种写法
+
+  1. `内连方式 style={{flex:1,borderColor:'red'}}`
+  1. `包裹方式 style={[styles.style1,styles.style2]}`
+  1. `包裹样式和内连 style={[styles.style1,{flex:1,borderWidth:1}]}`
 
 
 **[⬆ 回到目录](#内容目录)**
