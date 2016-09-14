@@ -328,7 +328,6 @@ This is some of my own to react-native learning footprint and some of his own re
 
 
 ## React Native 布局篇
-
 ### 盒子模型flexBox及布局
 
   - **盒子模型**
@@ -499,8 +498,6 @@ This is some of my own to react-native learning footprint and some of his own re
   1. `this.onPageScroll.bind(this)`
   1. `()=>this.onPageScroll()` 
   1. `this.onPageScroll= this.onPageScroll.bind(this)`  注：构造函数中
-
-
 
 ### 路由Navigator配置和重写物理Back键的简单封装
 
