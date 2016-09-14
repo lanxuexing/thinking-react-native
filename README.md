@@ -10,7 +10,7 @@ This is some of my own to react-native learning footprint and some of his own re
 - React Native 生命周期
   - [九个生命周期一个组件渲染及其讲解](#九个生命周期一个组件渲染及其讲解)
 - React Native 布局篇
-  - [flexBox盒子模型及布局](#flexBox盒子模型及布局)
+  - [盒子模型flexBox及布局](#盒子模型flexBox及布局)
 - React Native 学习资料
   - [文档类](#文档类)
   - [组件类](#组件类)
@@ -22,7 +22,7 @@ This is some of my own to react-native learning footprint and some of his own re
 - React Native 小功能
   - [style的三种写法](#style的三种写法)
   - [绑定this的三种方式](#绑定this的三种方式)
-  - [Navigator路由配置和重写物理Back键的简单封装](#Navigator路由配置和重写物理Back键的简单封装)
+  - [路由Navigator配置和重写物理Back键的简单封装](#路由Navigator配置和重写物理Back键的简单封装)
 
 
 ## React Native环境安装
@@ -329,7 +329,7 @@ This is some of my own to react-native learning footprint and some of his own re
 
 ## React Native 布局篇
 
-### flexBox盒子模型及布局
+### 盒子模型flexBox及布局
 
   - **盒子模型**
     * Flexbox是Flexible Box的缩写，主流的浏览器都支持弹性盒子布局，flexbox布局是伸缩容器(container)和伸缩项目(item)组成。
@@ -502,7 +502,7 @@ This is some of my own to react-native learning footprint and some of his own re
 
 
 
-### Navigator路由配置和重写物理Back键的简单封装
+### 路由Navigator配置和重写物理Back键的简单封装
 
   * 代码演示
 
