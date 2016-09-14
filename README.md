@@ -3,10 +3,12 @@ This is some of my own to react-native learning footprint and some of his own re
 
 ## 内容目录
 
-- React Native环境安装
+- React Native 环境安装
   - [Windows环境下React Native环境配置详解](#Windows环境下React Native环境配置详解)
-- React Native屏幕适配
+- React Native 屏幕适配
   - [react-native-screen-adapter](#react-native-screen-adapter)
+- React Native 生命周期
+  - [九个生命周期一个组件渲染及其讲解](#九个生命周期一个组件渲染及其讲解)
 
 ## React Native环境安装
 ###  Windows环境下React Native环境配置详解
@@ -163,6 +165,148 @@ This is some of my own to react-native learning footprint and some of his own re
 
     * [React Native官网](http://facebook.github.io/react-native/docs/pixelratio.html#content)
     * [CSDN博客](http://blog.csdn.net/zhaoyw2008/article/details/46008513)
+
+
+## React Native 生命周期
+### 九个生命周期一个组件渲染及其讲解
+
+  - **getDefaultProps**
+    * 注意：ES6写法
+
+      ```javascript
+        static get defaultProps() {
+        return {
+            key: 'value'
+          };
+        }
+      ````
+
+    * 在组件创建之前，会先调用这个方法，全局调用一次。
+
+  - **getInitialState**
+    * 注意：ES6写法
+
+    ```javascript
+      class Video extends Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                loopsRemaining: this.props.maxLoops,
+            };
+        }
+      }
+    ```
+
+    * 初始化状态值，可用于改变组件状态
+
+  - **componentWillMount**
+    * 注意：ES6写法
+
+    ```javascript
+      class Photo extends Component {
+          componentWillMount() {
+
+          }
+      }
+    ```
+    
+    * 在组件创建，并初始化了状态之后，在第一次绘制 render() 之前。可以在这里做一些业务初始化操作，也可以设置组件状态。这个函数在整个生命周期中只被调用一次。
+
+  - **render**
+    * 注意: ES6写法
+
+    ```javascript
+      class Photo extends Component {
+          render() {
+              return (
+                  <Image source={this.props.source} />
+              );
+          }
+      }
+    ```
+      
+    * 组件渲染，并返回JSX或其他组件来构成DOM。
+
+  - **componentDidMount**
+    * 注意：ES6写法
+
+    ```javascript
+      class Photo extends Component {
+          componentDidMount() {
+
+          }
+      }
+    ```
+    * 初始渲染完成立即调用此函数(只执行一次)
+
+  - **componentWillReceiveProps**
+    * 注意：ES6写法
+
+    ```javascript
+      class Photo extends Component {
+          componentWillReceiveProps(nextProps, nextContext) {
+
+          }
+      }
+    ```
+
+    * 初始渲染完成，组件接收到新的props时调用此函数
+
+  - **shouldComponentUpdate**
+    * 注意：ES6写法
+
+    ```javascript
+      class Photo extends Component {
+          shouldComponentUpdate(nextProps, nextState) {
+              return true; //默认返回true
+          }
+      }
+    ```
+
+    * 初始渲染完成，组件接收到新的props或者state重新渲染之前，调用该函数
+
+  - **componentWillUpdate**
+    * 注意：ES6写法
+
+    ```javascript
+      class Photo extends Component {
+          componentWillUpdate(nextProps, nextState) {
+              
+          }
+      }
+    ```
+
+    * 初始渲染完成，组件接收到新的props或者state重新渲染之前，调用该函数
+
+  - **componentDidUpdate**
+    * 注意：ES6写法
+
+    ```javascript
+      class Photo extends Component {
+          componentDidUpdate(prevProps, prevState) {
+              
+          }
+      }
+    ```
+
+    * 初始渲染完成，组件接收到新的props或者state重新渲染完成之后，调用该函数
+
+  - **componentWillUnmount**
+    * 注意：ES6写法
+
+    ```javascript
+      class Photo extends Component {
+          componentWillUnmount() {
+              
+          }
+      }
+    ```
+
+    * 组件即将从界面上移除的时候，调用该函数
+
+  - **流程原理图**
+
+  ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/LifeCycle/imgs/react-native-lifeCycle.jpg)
 
 
 **[⬆ 回到目录](#内容目录)**
