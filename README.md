@@ -405,5 +405,8 @@ This is some of my own to react-native learning footprint and some of his own re
 
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexWrap-wrap.jpg)
 
+    - **Example**
+    * [演示案例](https://github.com/lan-xue-xing/thinking-react-native/blob/master/FlexBox/code/FlexBox.js)
+
 
 **[⬆ 回到目录](#内容目录)**
