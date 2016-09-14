@@ -562,9 +562,83 @@ This is some of my own to react-native learning footprint and some of his own re
     }
   ```
 
+  * 注意事项
+    * `添加物理Back键监听的时候不能使用bind和箭头函数，否则无法卸载监听器，因为它们每次被执行都返回的是一个新的函数引用
+      而我们需要使用绑定的函数引用去卸载监听器，所以需要保存同一个引用，因此在构造函数中一次性绑定`
+    * addEventListener(type: 'cached', listener: (ev: Event) => any, useCapture ? :boolean)
+    1. 第一个参数：type类型
+    1. 第二个参数：回调监听
+    1. 第三个参数：是否捕获，true 的触发顺序总是在 false 之前，如果多个均为 true，则外层的触发先于内层，如果多个均为 false，则内层的触发先于外层
+    
+
   * 图文讲解
 
   ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/LifeCycle/imgs/Navigator.png)
+
+  * 再按一次退出应用
+
+  ```javascript
+    onBackAndroid() {
+        const navigator = this.refs.navigator;
+        const routers = navigator.getCurrentRoutes();
+        console.log('当前路由长度：' + routers.length);
+        if (routers.length > 1) {
+            navigator.pop();
+            return true;
+        } else {
+            if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
+            //最近2秒内按过back键，可以退出应用。
+                return false;
+            }
+            this.lastBackPressed = Date.now();
+            ToastAndroid.show('再按一次退出应用',ToastAndroid.SHORT);
+            return true;
+        }
+    };
+  ```
+
+  * 在退出应用之前保存数据
+
+  ```javascript
+    //写法1
+    onBackAndroid = () => {
+        saveData().then(()=> {
+            BackAndroid.exitApp();
+        });
+        return true;
+    }
+
+    //写法2
+    onBackAndroid = async () => {
+        await saveData();
+        BackAndroid.exitApp();
+    }
+  ```
+
+  * 根据当前界面决定作何动作
+
+  ```javascript
+    onBackAndroid = () => {
+        const nav = this.navigator;
+        const routers = nav.getCurrentRoutes();
+        if (routers.length > 1) {
+        const top = routers[routers.length - 1];
+        if (top.ignoreBack || top.component.ignoreBack){
+            // 路由或组件上决定这个界面忽略back键
+            return true;
+        }
+        const handleBack = top.handleBack || top.component.handleBack;
+        if (handleBack) {
+            // 路由或组件上决定这个界面自行处理back键
+            return handleBack();
+        }
+        // 默认行为： 退出当前界面。
+        nav.pop();
+            return true;
+        }
+        return false;
+    };
+  ```
 
 
 **[⬆ 回到目录](#内容目录)**
