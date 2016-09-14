@@ -9,6 +9,8 @@ This is some of my own to react-native learning footprint and some of his own re
   - [react-native-screen-adapter](#react-native-screen-adapter)
 - React Native 生命周期
   - [九个生命周期一个组件渲染及其讲解](#九个生命周期一个组件渲染及其讲解)
+- React Native 布局篇
+  - [flexBox盒子模型及布局](#flexBox盒子模型及布局)
 
 ## React Native环境安装
 ###  Windows环境下React Native环境配置详解
@@ -312,5 +314,87 @@ This is some of my own to react-native learning footprint and some of his own re
     * [演示案例](https://github.com/lan-xue-xing/thinking-react-native/blob/master/LifeCycle/code/SimpleLifeCycle.js)
 
 
+## React Native 布局篇
+### flexBox盒子模型及布局
 
-**[⬆回到目录](#内容目录)**
+  - **盒子模型**
+    * Flexbox是Flexible Box的缩写，主流的浏览器都支持弹性盒子布局，flexbox布局是伸缩容器(container)和伸缩项目(item)组成。
+    * Flexbox布局的主体思想是元素可以改变大小以适应可用空间，当可用空间变大，Flex元素将伸展大小以填充可用空间，当Flex元素超出可用空间时将自动缩小。 
+    * 按照伸缩流的方向布局，伸缩容器有主轴和交叉轴组成，主轴既可以是水平轴，也可以是垂直轴。
+
+  - **FlexBox的属性(React Native支持的)
+    * flex:1
+      * 块级伸缩容器
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flex1.png)
+
+      ```javascript
+        const styles = StyleSheet.create({
+            container: {
+                flex: 1
+            },
+            header: {
+                height: 200,
+                backgroundColor: 'red'
+            },
+            main: {
+                flex: 1,
+                backgroundColor: 'blue'
+            },
+            footer: {
+                height: 200,
+                backgroundColor: 'green'
+            },
+            text: {
+                color: '#ffffff',
+                fontSize: 80
+            }
+        });
+      ```
+
+    * flexDirection:'row'|'column' 
+      * 指定主轴的方向，它决定了自检内部的子组件是如何排列的，如果在View中没有定义flexDirection,则取默认值column
+      * row：主轴为水平方向，起点在左端
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexDirection-row.png)
+
+      * column：主轴为垂直方向，起点在上沿。
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexDirection-colume.png)
+
+    * justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around'
+      * 定义在一个方向上如何排列子组件
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/justifyContent.png)
+
+      ```
+        flex-start（默认值）：左对齐
+        flex-end：右对齐
+        center： 居中
+        space-between：两端对齐，项目之间的间隔都相等。
+        space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+      ```
+
+    * alignItems:'flex-start'|'flex-end'|'center'|'stretch'
+      * 定义了View组件中所有组件的对齐规则
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/alignItem.png)
+
+      ```
+        flex-start：交叉轴的起点对齐。
+        flex-end：交叉轴的终点对齐。
+        center：交叉轴的中点对齐。
+        stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+      ```
+
+    * alignSelf:'auto'|'flex-start'|'flex-end'|'center'|'stretch'
+      * 让组件忽略它的父组件样式中alignItems键的取值，而对应该组件使用alignSelf键对应的规则
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/alignSelf.png)
+
+    * flexWrap:'wrap'|'nowrap'
+      * 在默认的情况下，组件中的子组件按照flexDirection键决定的方向一直排列下去，即使超出了该方向的宽度或者高度也不管，flexWrap的默认值是nowrap,wrap为自动换行
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexWrap.png)
+
+      * nowrap 
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexWrap-nowrap.png)
+
+      * wrap
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/FlexBox/imgs/flexWrap-wrap.jpg)
+
+
+**[⬆ 回到目录](#内容目录)**
