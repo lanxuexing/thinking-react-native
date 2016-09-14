@@ -308,5 +308,9 @@ This is some of my own to react-native learning footprint and some of his own re
 
   ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/LifeCycle/imgs/react-native-lifeCycle.jpg)
 
+  - **Example**
+    * [演示案例](https://github.com/lan-xue-xing/thinking-react-native/blob/master/LifeCycle/code/SimpleLifeCycle.js)
+
+
 
 **[⬆ 回到目录](#内容目录)**
