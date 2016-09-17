@@ -456,11 +456,17 @@ This is some of my own to react-native learning footprint and some of his own re
   * [React Native中this详解](http://blog.csdn.net/u010046908/article/details/50812572)
   * [React Native中bind以及控件显示隐藏和返回键](http://blog.csdn.net/rainmeterlinux/article/details/50774633)
   * [Init指定特定React-Native版本](http://www.jianshu.com/p/646c5fbd9659)
-  * [React nNative开发论坛](http://www.reactnative.vip/)
+  * [React Native开发论坛](http://www.reactnative.vip/)
+  * [React Native实现弹出选择界面与动画效果](http://blog.csdn.net/codetomylaw/article/details/51971750)
+  * [React Native实现类似iPhone通讯录效果](https://github.com/chenbin92/React-native-example/issues/11)
+  * [React Native之Navigator路由导航详解](http://www.cnblogs.com/dson/p/5594986.html)
+  * [React Native Lesson](https://github.com/vczero/react-native-lesson)
+  * [React-Native iOS 真机测试详细流程](http://www.jianshu.com/p/75eb44ccd4f0)
 
 ### 语法类
 
   * [React Native代码编写规范](https://github.com/sunnylqm/react-native-coding-style)
+  * [React-Native 样式指南](https://github.com/doyoe/react-native-stylesheet-guide)
   * [ES5与ES6写法对照表](http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8)
   * [ECMAScript 6入门](http://es6.ruanyifeng.com/#README)
   * [ECMAScript 6扫盲](http://www.barretlee.com/blog/2016/07/09/a-kickstarter-guide-to-writing-es6/)
@@ -486,6 +492,7 @@ This is some of my own to react-native learning footprint and some of his own re
 ### 工具类
 
   * [ReactNative WebStorm基本配置](http://blog.csdn.net/gz_jero/article/details/51503374)
+  * [制作本地库](https://github.com/frostney/react-native-create-library)
 
 
 ## React Native 小功能
