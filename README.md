@@ -23,6 +23,7 @@ This is some of my own to react-native learning footprint and some of his own re
   - [style的三种写法](#style的三种写法)
   - [绑定this的三种方式](#绑定this的三种方式)
   - [路由Navigator配置和重写物理Back键的简单封装](#路由Navigator配置和重写物理Back键的简单封装)
+  - [访电商客户端首页顶部滑动菜单](#访电商客户端首页顶部滑动菜单)
 
 
 ## React Native环境安装
@@ -640,6 +641,102 @@ This is some of my own to react-native learning footprint and some of his own re
         return false;
     };
   ```
+
+
+### 访电商客户端首页顶部滑动菜单
+
+  * 核心代码块
+  ```
+    export default class TopView extends Component {
+
+    // 构造
+    constructor(props) {
+        super(props);
+        // 初始状态
+        this.state = {
+            activePage: 0
+        };
+    }
+
+    render() {
+        return (
+            <View style={styles.container}>
+                {/** 内容部分 **/}
+                <ScrollView
+                    horizontal={true}
+                    pagingEnabled={true}
+                    showsHorizontalScrollIndicator={false}
+                    onMomentumScrollEnd={this.onScrollAnimationEnd.bind(this)}
+                >
+                    {this.renderScrollViewItem()}
+                </ScrollView>
+                {/** 页码部分 **/}
+                <View style={styles.indicatorViewStyle}>
+                    {this.renderIndicator()}
+                </View>
+
+            </View>
+        );
+    }
+
+    /** 内容部分 **/
+    renderScrollViewItem() {
+        //组件数组
+        let itemArr = [];
+        //数据数组
+        let dataArr = TopMenuData.data;
+        console.log('得到的json数组');
+        console.log(dataArr);
+        //遍历创建组件
+        for (let i=0; i<dataArr.length; i++) {
+            itemArr.push(
+                <TopListView
+                    key={i}
+                    dataArr={dataArr[i]}
+                />
+            )
+        }
+
+        //返回组件数组
+        return itemArr;
+    }
+
+
+    /** 页码部分（指示器） **/
+    renderIndicator() {
+        //指示器数组
+        let indicatorArr = [];
+        //遍历创建组件
+        for (let i=0; i<2; i++) {
+            //设置圆点的样式
+            style = (i === this.state.activePage) ? {color: 'orange'} : {color: 'gray'};
+            //往数组添加组件
+            indicatorArr.push(
+                <Text key={i} style={[styles.indicatorSizeStyle, style]}>&bull;</Text>
+            )
+        }
+
+        //返回指示器数组
+        return indicatorArr;
+    }
+
+    onScrollAnimationEnd(e){
+        //求出当前的页码
+        let currentPage = Math.ceil(e.nativeEvent.contentOffset.x / width);
+        //改变状态机
+        this.setState({
+            activePage: currentPage
+        });
+    }
+
+  }
+  ```
+
+  * 效果图
+  ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/SmallFeature/app-topMenu/screenshot/toplistview.gif)
+
+  - Demo的全部代码
+    * [演示案例](https://github.com/lan-xue-xing/thinking-react-native/blob/master/SmallFeature/app-topMenu/app)
 
 
 **[⬆ 回到目录](#内容目录)**
