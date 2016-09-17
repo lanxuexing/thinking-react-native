@@ -24,6 +24,7 @@ This is some of my own to react-native learning footprint and some of his own re
   - [绑定this的三种方式](#绑定this的三种方式)
   - [路由Navigator配置和重写物理Back键的简单封装](#路由Navigator配置和重写物理Back键的简单封装)
   - [访电商客户端首页顶部滑动菜单](#访电商客户端首页顶部滑动菜单)
+  - [强制隐藏软键盘](#强制隐藏软键盘)
 
 
 ## React Native环境安装
@@ -733,11 +734,21 @@ This is some of my own to react-native learning footprint and some of his own re
   ```
 
   * 效果图
-  
+
   ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/SmallFeature/app-topMenu/screenshot/toplistview.gif)
 
   - Demo的全部代码
     * [演示案例](https://github.com/lan-xue-xing/thinking-react-native/blob/master/SmallFeature/app-topMenu/app)
+
+
+### 强制隐藏软键盘
+
+  ```javascript
+    onDismissKeyboard() {
+        let dismissKeyboard = require('dismissKeyboard');
+        dismissKeyboard();
+    }
+  ```
 
 
 **[⬆ 回到目录](#内容目录)**
