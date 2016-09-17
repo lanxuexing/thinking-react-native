@@ -646,7 +646,7 @@ This is some of my own to react-native learning footprint and some of his own re
 ### 访电商客户端首页顶部滑动菜单
 
   * 核心代码块
-  ```
+  ```javascript
     export default class TopView extends Component {
 
     // 构造
