@@ -4,9 +4,9 @@ This is some of my own to react-native learning footprint and some of his own re
 ## 内容目录
 
 - React Native 环境安装
-  - [Windows环境下React Native环境配置详解](#Windows环境下React Native环境配置详解)
+  - [Windows环境下React-Native环境配置详解](#Windows环境下React-Native环境配置详解)
 - React Native IDE开发工具
-  - [WebStorm之React Native开发环境配置](#WebStorm之React Native开发环境配置)
+  - [WebStorm之React-Native开发环境配置](#WebStorm之React-Native开发环境配置)
 - React Native 屏幕适配
   - [react-native-screen-adapter](#react-native-screen-adapter)
 - React Native 生命周期
