@@ -125,7 +125,7 @@ This is some of my own to react-native learning footprint and some of his own re
         * 如果都不行可以看这个：http://0.idea.lanyus.com
 
     2.补丁方式
-      * [具体方法请看Mac破解版中的子文件](http://xclient.info/)
+      * [具体方法请看Mac Crack版中的子文件](http://xclient.info/)
 
     3.修改计算机本地时间
       * 由于试用是30天，安装的时候可以先将本地时间修改为未来的某个时间，安装完成之后再修改回来，以达到延长使用的目的。
@@ -137,11 +137,11 @@ This is some of my own to react-native learning footprint and some of his own re
 
     2.库文件添加
       * 详细流程以及需要下载的库
-      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/Libraries.png)
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Libraries.png)
 
     3.语法选择
       * React Native使用的是JSX语法
-      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/Javascript.png)
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Javascript.png)
         
 
 ## React Native屏幕适配
