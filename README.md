@@ -5,6 +5,8 @@ This is some of my own to react-native learning footprint and some of his own re
 
 - React Native 环境安装
   - [Windows环境下React Native环境配置详解](#Windows环境下React Native环境配置详解)
+- React Native IDE开发工具
+  - [WebStorm之React Native开发环境配置](#WebStorm之React Native开发环境配置)
 - React Native 屏幕适配
   - [react-native-screen-adapter](#react-native-screen-adapter)
 - React Native 生命周期
@@ -106,6 +108,41 @@ This is some of my own to react-native learning footprint and some of his own re
     - **十、常见错误解决方案(十全十美，期待高手来加入补充...)**
         * 待续...
 
+
+## React Native IDE开发工具
+### WebStorm之React Native开发环境配置
+
+  - **WebStorm下载地址**
+    * [官方下载](http://www.jetbrains.com/webstorm/)
+    * [Mac Crack版](http://xclient.info/)
+
+  - **安装以及Crack**
+
+    1.license server注册方式
+      * 这里提供几个
+        * http://idea.imsxm.com/
+        * http://114.215.133.70:41017
+        * 如果都不行可以看这个：http://0.idea.lanyus.com
+
+    2.补丁方式
+      * [具体方法请看Mac破解版中的子文件](http://xclient.info/)
+
+    3.修改计算机本地时间
+      * 由于试用是30天，安装的时候可以先将本地时间修改为未来的某个时间，安装完成之后再修改回来，以达到延长使用的目的。
+
+  - **开发环境配置**
+
+    1.智能代码补全提醒插件
+      * [github下载以及安装使用说明](https://github.com/virtoolswebplayer/ReactNative-LiveTemplate)
+
+    2.库文件添加
+      * 详细流程以及需要下载的库
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/Libraries.png)
+
+    3.语法选择
+      * React Native使用的是JSX语法
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/Javascript.png)
+        
 
 ## React Native屏幕适配
 ### react-native-screen-adapter
