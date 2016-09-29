@@ -4,15 +4,15 @@ This is some of my own to react-native learning footprint and some of his own re
 ## 内容目录
 
 - React Native 环境安装
-  - [Windows环境下React-Native环境配置详解](#Windows环境下React-Native环境配置详解)
+  - [Windows环境下React-Native环境配置详解](#windows环境下React-Native环境配置详解)
 - React Native IDE开发工具
-  - [WebStorm之React-Native开发环境配置](#WebStorm之React-Native开发环境配置)
+  - [WebStorm之React-Native开发环境配置](#webStorm之React-Native开发环境配置)
 - React Native 屏幕适配
   - [react-native-screen-adapter](#react-native-screen-adapter)
 - React Native 生命周期
   - [九个生命周期一个组件渲染及其讲解](#九个生命周期一个组件渲染及其讲解)
 - React Native 布局篇
-  - [盒子模型flexBox及布局](#盒子模型flexBox及布局)
+  - [FlexBox盒子模型及布局](#flexBox盒子模型及布局)
 - React Native 学习资料
   - [文档类](#文档类)
   - [组件类](#组件类)
@@ -21,12 +21,14 @@ This is some of my own to react-native learning footprint and some of his own re
   - [布局类](#布局类)
   - [架构类](#架构类)
   - [工具类](#工具类)
+  - [学习提纲](#学习提纲)
 - React Native 小功能
   - [style的三种写法](#style的三种写法)
   - [绑定this的三种方式](#绑定this的三种方式)
-  - [路由Navigator配置和重写物理Back键的简单封装](#路由Navigator配置和重写物理Back键的简单封装)
+  - [Navigator路由配置和重写物理Back键的简单封装](#navigator路由配置和重写物理Back键的简单封装)
   - [访电商客户端首页顶部滑动菜单](#访电商客户端首页顶部滑动菜单)
   - [强制隐藏软键盘](#强制隐藏软键盘)
+  - [React-Native引入第三方组件链接库导入配置技巧](#react-native引入第三方组件链接库导入配置技巧)
 
 
 ## React Native环境安装
@@ -367,7 +369,7 @@ This is some of my own to react-native learning footprint and some of his own re
 
 
 ## React Native 布局篇
-### 盒子模型flexBox及布局
+### FlexBox盒子模型及布局
 
   - **盒子模型**
     * Flexbox是Flexible Box的缩写，主流的浏览器都支持弹性盒子布局，flexbox布局是伸缩容器(container)和伸缩项目(item)组成。
@@ -531,6 +533,10 @@ This is some of my own to react-native learning footprint and some of his own re
   * [ReactNative WebStorm基本配置](http://blog.csdn.net/gz_jero/article/details/51503374)
   * [制作本地库](https://github.com/frostney/react-native-create-library)
 
+### 学习提纲
+  
+  * [React Native学习提纲](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/LearningOutline/react-native-learning-outline.md)
+
 
 ## React Native 小功能
 ### style的三种写法
@@ -545,7 +551,7 @@ This is some of my own to react-native learning footprint and some of his own re
   1. `()=>this.onPageScroll()` 
   1. `this.onPageScroll= this.onPageScroll.bind(this)`  注：构造函数中
 
-### 路由Navigator配置和重写物理Back键的简单封装
+### Navigator路由配置和重写物理Back键的简单封装
 
   * 代码演示
 
@@ -793,6 +799,29 @@ This is some of my own to react-native learning footprint and some of his own re
         dismissKeyboard();
     }
   ```
+
+
+### React-Native引入第三方组件链接库导入配置技巧
+
+  * React-Native版本在0.27之后，`rnpm link`命令已经被合并到React Native CLI，所以只需要简单运行一下命令：
+    * 方式一
+      ```
+      react-native link xxx(xxx是你要引入的第三方组件的名称，例如：react-native-fs)
+      ```
+    * 方式二
+      ```
+      react-native link (不写组件名称，会自动导入配置package.json下的所有引入三方组件,包括已经配置了的，是覆盖操作)
+      ```
+    
+  * React-Native版本在0.27之前，需要这样执行命令：
+    * 方式一
+      ```
+      rnpm link xxx(xxx是你要引入的第三方组件的名称，例如：react-native-fs，注意这个需要安装rnpm命令：npm i -g rnpm)
+      ```
+    * 方式二
+      ```
+      rnpm link (不写组件名称，会自动导入配置package.json下的所有引入三方组件,包括已经配置了的，是覆盖操作)
+      ```
 
 
 **[⬆ 回到目录](#内容目录)**
