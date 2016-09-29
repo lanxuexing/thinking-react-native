@@ -805,20 +805,26 @@ This is some of my own to react-native learning footprint and some of his own re
 
   * React-Native版本在0.27之后，`rnpm link`命令已经被合并到React Native CLI，所以只需要简单运行一下命令：
     * 方式一
+
       ```
       react-native link xxx(xxx是你要引入的第三方组件的名称，例如：react-native-fs)
       ```
+
     * 方式二
+
       ```
       react-native link (不写组件名称，会自动导入配置package.json下的所有引入三方组件,包括已经配置了的，是覆盖操作)
       ```
     
   * React-Native版本在0.27之前，需要这样执行命令：
     * 方式一
+
       ```
       rnpm link xxx(xxx是你要引入的第三方组件的名称，例如：react-native-fs，注意这个需要安装rnpm命令：npm i -g rnpm)
       ```
+
     * 方式二
+    
       ```
       rnpm link (不写组件名称，会自动导入配置package.json下的所有引入三方组件,包括已经配置了的，是覆盖操作)
       ```
