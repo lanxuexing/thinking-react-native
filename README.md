@@ -6,13 +6,13 @@ This is some of my own to react-native learning footprint and some of his own re
 - React Native 环境安装
   - [Windows环境下React-Native环境配置详解](#windows环境下React-Native环境配置详解)
 - React Native IDE开发工具
-  - [WebStorm之React-Native开发环境配置](#webStorm之React-Native开发环境配置)
+  - [WebStorm之React-Native开发环境配置](#WebStorm之React-Native开发环境配置)
 - React Native 屏幕适配
   - [react-native-screen-adapter](#react-native-screen-adapter)
 - React Native 生命周期
   - [九个生命周期一个组件渲染及其讲解](#九个生命周期一个组件渲染及其讲解)
 - React Native 布局篇
-  - [FlexBox盒子模型及布局](#flexBox盒子模型及布局)
+  - [FlexBox盒子模型及布局](#FlexBox盒子模型及布局)
 - React Native 学习资料
   - [文档类](#文档类)
   - [组件类](#组件类)
@@ -28,7 +28,7 @@ This is some of my own to react-native learning footprint and some of his own re
   - [Navigator路由配置和重写物理Back键的简单封装](#navigator路由配置和重写物理Back键的简单封装)
   - [访电商客户端首页顶部滑动菜单](#访电商客户端首页顶部滑动菜单)
   - [强制隐藏软键盘](#强制隐藏软键盘)
-  - [React-Native引入第三方组件链接库导入配置技巧](#react-native引入第三方组件链接库导入配置技巧)
+  - [React-Native引入第三方组件链接库导入配置技巧](#React-Native引入第三方组件链接库导入配置技巧)
 
 
 ## React Native环境安装
@@ -112,7 +112,7 @@ This is some of my own to react-native learning footprint and some of his own re
 
 
 ## React Native IDE开发工具
-### WebStorm之React Native开发环境配置
+### WebStorm之React-Native开发环境配置
 
   - **WebStorm下载地址**
     * [官方下载](http://www.jetbrains.com/webstorm/)
