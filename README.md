@@ -535,7 +535,7 @@ This is some of my own to react-native learning footprint and some of his own re
 
 ### 学习提纲
   
-  * [React Native学习提纲](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/LearningOutline/react-native-learning-outline.md)
+  * [React Native学习提纲](https://github.com/lan-xue-xing/thinking-react-native/blob/master/ResourceFile/LearningOutline/react-native-learning-outline.md)
 
 
 ## React Native 小功能
@@ -824,7 +824,7 @@ This is some of my own to react-native learning footprint and some of his own re
       ```
 
     * 方式二
-    
+
       ```
       rnpm link (不写组件名称，会自动导入配置package.json下的所有引入三方组件,包括已经配置了的，是覆盖操作)
       ```
