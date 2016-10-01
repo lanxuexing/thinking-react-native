@@ -1024,4 +1024,180 @@ This is some of my own to react-native learning footprint and some of his own re
     ```
 
 
+  * Android原生侧发送消息到React Native侧
+
+    1. 代码同上React Native侧调用原生模块，不同的是在自定义的本地接口类中新增一个方法(函数)
+
+    ```java
+        /**
+        * 本地原生模块接口，用于与React Native侧的消息互通
+        */
+        public class NativeInterface extends ReactContextBaseJavaModule{
+
+            private final ReactApplicationContext mContext;
+            private static final String TAG = "NativeInterface";
+
+            /**
+            * 构造方法
+            * @param reactContext 上下文
+            */
+            public NativeInterface(ReactApplicationContext reactContext) {
+                super(reactContext);
+                mContext = reactContext;
+            }
+
+            /**
+            * 定义React Native侧调用原生模块的名称,React Native侧通过这个名称进行调用
+            * @return 原声代码块的名称
+            */
+            @Override
+            public String getName() {
+                return "NativeInterface";
+            }
+
+            /**
+            * 原生模块向React Native侧发送消息
+            * @param message 消息
+            */
+            public void sendMessage(String message) {
+                mContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("NativeMessage", message);
+            }
+
+        }
+    ```
+
+    2. Android原生侧发送事件(消息)到React Native侧
+
+    ```java
+        /**
+        * 原生的界面
+        */
+        public class NativeActivity extends Activity {
+
+            private Button mButton;
+
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.native_view);
+                //初始化View
+                initView();
+            }
+
+            /**
+            * 初始化View
+            */
+            private void initView() {
+                //获取转递过来的Bundle里边的数据
+                Bundle bundle = this.getIntent().getExtras();
+                String msg = bundle.getString("msg");
+                Toast.makeText(NativeActivity.this, "接收到来自React Native侧发送来的消息: " + msg, Toast.LENGTH_SHORT).show();
+                mButton = (Button) findViewById(R.id.btn);
+                //点击事件
+                mButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //调用本地接口NativeInterface里边定义好的方法向React Native侧发送消息
+                        MainApplication.getNativePackage().mNativeInterface.sendMessage("我来自Android客户端");
+                        //页面返回
+                        finish();
+                    }
+                });
+            }
+
+        }
+    ``` 
+
+    3.React Native侧接收Android侧发送过来的事件(消息)
+
+    ```javascript
+    import React, { Component } from 'react';
+    import {
+        View,
+        Text,
+        StyleSheet,
+        NativeModules,
+        DeviceEventEmitter,
+        ToastAndroid
+    } from 'react-native';
+
+
+    export default class NativeView extends Component {
+
+
+        // 构造
+        constructor(props) {
+            super(props);
+            // 初始状态
+            this.state = {
+                showText: '哈哈'
+            };
+        }
+
+
+        componentWillMount() {
+            DeviceEventEmitter.addListener('NativeMessage', this.receiveNativeMsg.bind(this));
+        }
+
+
+        receiveNativeMsg(message) {
+            ToastAndroid.show(message, ToastAndroid.SHORT);
+            this.setState({
+                showText: message
+            })
+        }
+
+
+        render() {
+            return (
+                <View style={styles.container}>
+                    <View style={styles.innerContainer}>
+                        <Text
+                            style={styles.textStyle}
+                            onPress={() => this.onPress()}
+                        >
+                            点我
+                        </Text>
+                        <View onLayout={this.onLayout}>
+                            <Text>{this.state.showText}</Text>
+                        </View>
+                    </View>
+                </View>
+            );
+        }
+
+        /** 点击事件 **/
+        onPress() {
+            NativeModules.NativeInterface.HandleMessage('我是React Native噢,(*^__^*) 嘻嘻');
+        }
+
+        /** 测量控件 **/
+        onLayout(event) {
+            console.log(event.nativeEvent.layout);
+        }
+    }
+
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#EEDFCC'
+        },
+        innerContainer: {
+            paddingHorizontal: 150,
+            paddingVertical: 60,
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderColor: '#ff3333',
+            borderWidth: 2
+        },
+        textStyle: {
+            fontSize: 50,
+            color: '#ff3333'
+        }
+    });
+    ```
+
+
 **[⬆ 回到目录](#内容目录)**
