@@ -29,6 +29,7 @@ This is some of my own to react-native learning footprint and some of his own re
   - [访电商客户端首页顶部滑动菜单](#访电商客户端首页顶部滑动菜单)
   - [强制隐藏软键盘](#强制隐藏软键盘)
   - [React-Native引入第三方组件链接库导入配置技巧](#React-Native引入第三方组件链接库导入配置技巧)
+  - [混合开发之Android篇](#混合开发之Android篇)
 
 
 ## React Native环境安装
@@ -828,6 +829,199 @@ This is some of my own to react-native learning footprint and some of his own re
       ```
       rnpm link (不写组件名称，会自动导入配置package.json下的所有引入三方组件,包括已经配置了的，是覆盖操作)
       ```
+
+### 混合开发之Android篇
+ 
+  * 使用Android Studio打开已有的React Native项目
+
+    1. 打开Android Studio，点击"Open an existing Android Studio project"
+    1. 选择RReact Native项目目录下的android子目录下的build.gradle文件，选择打开即可
+
+  * React Native侧发送消息到Android原生侧
+
+    1. 新建一个接口类并继承ReactContextBaseJavaModule，然后实现React Native侧希望调用的方法
+    ```java
+        /**
+        * 本地原生模块接口，用于与React Native侧的消息互通
+        */
+        public class NativeInterface extends ReactContextBaseJavaModule{
+
+            private final ReactApplicationContext mContext;
+            private static final String TAG = "NativeInterface";
+
+            /**
+            * 构造方法
+            * @param reactContext 上下文
+            */
+            public NativeInterface(ReactApplicationContext reactContext) {
+                super(reactContext);
+                mContext = reactContext;
+            }
+
+            /**
+            * 定义React Native侧调用原生模块的名称,React Native侧通过这个名称进行调用
+            * @return 原声代码块的名称
+            */
+            @Override
+            public String getName() {
+                return "NativeInterface";
+            }
+
+            /**
+            * 原生界面提供給React Native侧调用的方法
+            * @param msg 消息字符串
+            */
+            @ReactMethod
+            public void HandleMessage(String msg) {
+                Log.i(TAG, "接收到来自React Native侧发送来的消息: " + msg);
+                Intent intent = new Intent(mContext, NativeActivity.class);
+                //这个很重要，不写会报错，用于开启新的栈
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                //用Bundle携带数据
+                Bundle bundle=new Bundle();
+                //传递msg参数为msg
+                bundle.putString("msg", msg);
+                intent.putExtras(bundle);
+                //开启新的Activity
+                mContext.startActivity(intent);
+            }
+
+        }
+    ```
+    * 注意:getName()函数是返回原生模块的名称，在React Native侧通过这个名称调用原生代码块提供的函数，该函数必须使用`@ReactMethod`关键字将其注释为React函数在React Native侧才能被调用
+
+    1. 注册已经编写的原生代码模块，需要实现ReactPackage包管理类，且必须实现createNativeModules方法
+
+    ```java
+        /**
+        * 原生模块本地的包管理类，用于注册我们编写的原生代码模块
+        */
+        public class NativeReactPackage implements ReactPackage{
+
+            public NativeInterface mNativeInterface;
+
+            /**
+            * 必须要实现的方法，方法接收我们自己编写的原生模块接口
+            * @param reactContext 上下文
+            * @return 本地模块
+            */
+            @Override
+            public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+                //创建集合，添加我们编写的原生模块的接口,并返回
+                List<NativeModule> modules = new ArrayList<>();
+                mNativeInterface = new NativeInterface(reactContext);
+                modules.add(mNativeInterface);
+                return modules;
+            }
+
+            @Override
+            public List<Class<? extends JavaScriptModule>> createJSModules() {
+                //这里并没有实现，所以返回了空
+                return Collections.emptyList();
+            }
+
+            @Override
+            public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
+                //这里并没有实现，所以返回了空
+                return Collections.emptyList();
+            }
+        }
+    ```
+
+    2. 在MainApplication.java的getPackages()函数中创建自己编写的包管理类
+
+    ```java
+        public class MainApplication extends Application implements ReactApplication {
+
+            public static NativeReactPackage mNativeReactPackage;
+
+            private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+
+                @Override
+                protected boolean getUseDeveloperSupport() {
+                    return BuildConfig.DEBUG;
+                }
+
+                @Override
+                protected List<ReactPackage> getPackages() {
+                mNativeReactPackage = new NativeReactPackage();
+                return Arrays.<ReactPackage>asList(
+                    new MainReactPackage(),
+                    new ImagePickerPackage(),
+                    //添加我们自己的本地包管理类
+                    mNativeReactPackage
+                );
+                }
+            };
+
+            @Override
+            public ReactNativeHost getReactNativeHost() {
+                return mReactNativeHost;
+            }
+
+        }
+    ```
+
+    3. React Native侧进行调用Android原生侧提供的函数
+
+    ```Javascript
+        import React, { Component } from 'react';
+        import {
+            View,
+            Text,
+            StyleSheet,
+            NativeModules,
+            ToastAndroid
+        } from 'react-native';
+
+
+        export default class NativeView extends Component {
+
+            render() {
+                return (
+                    <View style={styles.container}>
+                        <View style={styles.innerContainer}>
+                            <Text
+                                style={styles.textStyle}
+                                onPress={() => this.onPress()}
+                            >
+                                点我
+                            </Text>
+                        </View>
+                    </View>
+                );
+            }
+
+            /** 点击事件 **/
+            onPress() {
+                //React Native侧调用Android原生侧提供的函数，注意需要从react-native导入NativeModules
+                NativeModules.NativeInterface.HandleMessage('我是React Native噢,(*^__^*) 嘻嘻');
+            }
+
+        }
+
+        const styles = StyleSheet.create({
+            container: {
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#EEDFCC'
+            },
+            innerContainer: {
+                paddingHorizontal: 150,
+                paddingVertical: 60,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderColor: '#ff3333',
+                borderWidth: 2
+            },
+            textStyle: {
+                fontSize: 50,
+                color: '#ff3333'
+            }
+        });
+
+    ```
 
 
 **[⬆ 回到目录](#内容目录)**
