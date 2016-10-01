@@ -888,9 +888,9 @@ This is some of my own to react-native learning footprint and some of his own re
 
         }
     ```
-    * 注意:getName()函数是返回原生模块的名称，在React Native侧通过这个名称调用原生代码块提供的函数，该函数必须使用`@ReactMethod`关键字将其注释为React函数在React Native侧才能被调用
+    * *注意:getName()函数是返回原生模块的名称，在React Native侧通过这个名称调用原生代码块提供的函数，该函数必须使用`@ReactMethod`关键字将其注释为React函数在React Native侧才能被调用*
 
-    1. 注册已经编写的原生代码模块，需要实现ReactPackage包管理类，且必须实现createNativeModules方法
+    * 注册已经编写的原生代码模块，需要实现ReactPackage包管理类，且必须实现createNativeModules方法
 
     ```java
         /**
@@ -928,7 +928,7 @@ This is some of my own to react-native learning footprint and some of his own re
         }
     ```
 
-    2. 在MainApplication.java的getPackages()函数中创建自己编写的包管理类
+    * 在MainApplication.java的getPackages()函数中创建自己编写的包管理类
 
     ```java
         public class MainApplication extends Application implements ReactApplication {
@@ -962,7 +962,7 @@ This is some of my own to react-native learning footprint and some of his own re
         }
     ```
 
-    3. React Native侧进行调用Android原生侧提供的函数
+    * React Native侧进行调用Android原生侧提供的函数
 
     ```Javascript
         import React, { Component } from 'react';
@@ -1026,7 +1026,7 @@ This is some of my own to react-native learning footprint and some of his own re
 
   * Android原生侧发送消息到React Native侧
 
-    1. 代码同上React Native侧调用原生模块，不同的是在自定义的本地接口类中新增一个方法(函数)
+    * 代码同上React Native侧调用原生模块，不同的是在自定义的本地接口类中新增一个方法(函数)
 
     ```java
         /**
@@ -1066,7 +1066,7 @@ This is some of my own to react-native learning footprint and some of his own re
         }
     ```
 
-    2. Android原生侧发送事件(消息)到React Native侧
+    * Android原生侧发送事件(消息)到React Native侧
 
     ```java
         /**
@@ -1108,7 +1108,7 @@ This is some of my own to react-native learning footprint and some of his own re
         }
     ``` 
 
-    3.React Native侧接收Android侧发送过来的事件(消息)
+    * React Native侧接收Android侧发送过来的事件(消息)
 
     ```javascript
     import React, { Component } from 'react';
