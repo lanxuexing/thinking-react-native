@@ -6,6 +6,7 @@ This is some of my own to react-native learning footprint and some of his own re
 - React Native 环境安装
   - [Windows环境下React-Native环境配置详解](#windows环境下React-Native环境配置详解)
   - [Mac环境下React-Native环境配置详解](#Mac环境下React-Native环境配置详解)
+  - [管理React-Native库的版本](#管理React-Native库的版本)
 - React Native IDE开发工具
   - [WebStorm之React-Native开发环境配置](#WebStorm之React-Native开发环境配置)
 - React Native 屏幕适配
@@ -176,6 +177,30 @@ This is some of my own to react-native learning footprint and some of his own re
   - **十一、运行项目到Android客户端**
     * 命令行输入：`react-native start(或者npm start)`，注意这个是包服务，不可关闭。
      command + N 新建一个新的终端窗口，命令行输入: `react-native run-android`
+
+
+### 管理React-Native库的版本
+  
+  - **一、查看本地的React Native的版本**
+    * 方法一：命令行输入：`react-native --version`
+    * 方法二：项目目录下package.json文件里的dependencies节点下可以查看
+
+  - **二、更新本地的React Native的版本**
+    * 命令行输入：`npm update -g react-native-cli`
+
+  - **三、查询react-native的npm包最新版本**
+    * NPM的全称是NOde Package Manager，是一个Node.js包管理和分发工具，已经成为了非官方的发布Node模块(包)的标准。
+    * npm包的地址：https://www.npmjs.com/package/react-native
+	* 命令行查询： `npm info react-native`
+
+  - **四、升级或者降级npm包的版本**
+    命令行输入：`npm install --save react-nativeC@0.32.0`
+
+  - **五、更新项目的templates文件(可选)**
+    * 新的npm包会包含更新在运行reac-native init命令生成的一些动态文件，例如init创建项目的时候会生成iOS和Android，
+     的子项目，我们可以通过以下的命令进行获取到最新的代码
+    * 命令行查询：`react-native upgrade`
+
 
 ## React Native IDE开发工具
 ### WebStorm之React-Native开发环境配置
