@@ -117,9 +117,9 @@ This is some of my own to react-native learning footprint and some of his own re
 ### Mac环境下React-Native环境配置详解
 
   - **一、安装Homebrew**
-    * Homebrew是OS X的套件(包)管理器，我们可以通过它获取并且安装很多组件。
+    * Homebrew是Mac OS X的套件(包)管理器，我们可以通过它获取并且安装很多组件。
     * 命令行输入：`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-    * 注意事项：在Max OS X 10.11（El Capitan)版本中，homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复
+    * 注意事项：在Mac OS X 10.11（El Capitan)版本中，homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复
       * 命令行输入：`sudo chown -R `whoami` /usr/local`
 
   - **二、安装npm和Node.js**
