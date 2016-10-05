@@ -194,7 +194,7 @@ This is some of my own to react-native learning footprint and some of his own re
 	* 命令行查询： `npm info react-native`
 
   - **四、升级或者降级npm包的版本**
-    命令行输入：`npm install --save react-nativeC@0.32.0`
+    命令行输入：`npm install --save react-native@0.32.0`
 
   - **五、更新项目的templates文件(可选)**
     * 新的npm包会包含更新在运行reac-native init命令生成的一些动态文件，例如init创建项目的时候会生成iOS和Android，
