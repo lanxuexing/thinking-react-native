@@ -5,6 +5,7 @@ This is some of my own to react-native learning footprint and some of his own re
 
 - React Native 环境安装
   - [Windows环境下React-Native环境配置详解](#windows环境下React-Native环境配置详解)
+  - [Mac环境下React-Native环境配置详解](#Mac环境下React-Native环境配置详解)
 - React Native IDE开发工具
   - [WebStorm之React-Native开发环境配置](#WebStorm之React-Native开发环境配置)
 - React Native 屏幕适配
@@ -111,6 +112,70 @@ This is some of my own to react-native learning footprint and some of his own re
     - **十、常见错误解决方案(十全十美，期待高手来加入补充...)**
         * 待续...
 
+
+### Mac环境下React-Native环境配置详解
+
+  - **一、安装Homebrew**
+    * Homebrew是OS X的套件(包)管理器，我们可以通过它获取并且安装很多组件。
+    * 命令行输入：`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    * 注意事项：在Max OS X 10.11（El Capitan)版本中，homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复
+      * 命令行输入：`sudo chown -R `whoami` /usr/local`
+
+  - **二、安装npm和Node.js**
+    * Node.js最好安装4.0及其以上更高的版本，node安装成功后npm自动也就有了。
+    * 命令行输入：`brew install node`
+
+  - **三、安装WatchMan**
+    * 该插件用于监控bug文件和文件变化，并且可以触发指定的操作。
+    * 命令行输入：`brew install watchman`
+
+  - **四、安装Flow(可选)**
+    * flow是一个javascript的静态类型查看器，建议安装它，以方便找出代码中的类型错误。
+    * 命令行输入：`brew install flow`
+
+  - **五、安装npm国内镜像(可选)**
+    * 命令行输入：`npm config set registry https://registry.npm.taobao.org --global`
+    * 命令行输入：`npm config set disturl https://npm.taobao.org/dist --global`
+ 
+  - **六、安装React Native**
+    * 命令行输入：`npm install -g react-native-cli`
+
+  - **七、iOS开发环境需求**
+    * Xcode7及其以上更高版本
+
+  - **八、Android开发环境需求**
+    1. 安装最新版(JDK8.0及其以上更高的版本)的JDk：http://www.oracle.com/technetwork/java/javase/downloads/index.html
+       所有版本的JDK下载地址：http://www.oracle.com/technetwork/java/archive-139210.html 
+
+    1. 强行插入：建议直接安装Android Studio，以下2、3、4步骤即可忽略。
+
+    1. 安装Android SDK，命令行输入：`brew install android-sdk`
+
+    1. 定义ANDROID_HOME环境变量，确保ANDROID_HOME环境变量指向你已经安装的Android SDK目录：前往电脑的`~/.bashrc,~/.bash_profile`或者你终端所用的其他配置文件中增加一下内容：
+        * 如果你是通过Homebrew安装的SDK的，则加入以下路径
+        `export ANDROID_HOME=/usr/local/opt/android-sdk`
+        * 否则加入以下路径
+        `export ANDROID_HOME=~/Library/Android/sdk`
+
+    1. 配置SDK，打开Android SDK Manager(Mac用户在终端下输入android)，选中以下项目：
+        * `Android SDK Build-tools version 23.0.1(这个必须版本严格匹配23.0.1)`
+	    * `Android 6.0(API 23)`
+	    * `Local Maven repository for Support Libraries(之前叫做Android Support Repository)`
+	    * 最后点击"install Packages"
+
+    1. 创建Android模拟器(Android API版本4.1及其以上),建议使用genymotios模拟器，使用这个模拟器需要安装一个VirtualBox虚拟机，创建模拟器需要注册一个自己的帐号。
+
+  - **九、初始化项目**
+    * 命令行输入：`react-native init xxx(项目名称)`
+
+  - **十、运行项目到ios客户端**
+    * 方法一：命令行输入：`react-native start(或者npm start)`，注意这个是包服务，不可关闭。
+          command + N 新建一个新的终端窗口，命令行输入: `react-native run-ios`
+    * 方法二：ios目录下用Xcode直接打开工程，运行即可(会自动执行方法一中的两句命令)。
+
+  - **十一、运行项目到Android客户端**
+    * 命令行输入：`react-native start(或者npm start)`，注意这个是包服务，不可关闭。
+     command + N 新建一个新的终端窗口，命令行输入: `react-native run-android`
 
 ## React Native IDE开发工具
 ### WebStorm之React-Native开发环境配置
