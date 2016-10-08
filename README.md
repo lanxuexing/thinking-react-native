@@ -207,11 +207,13 @@ This is some of my own to react-native learning footprint and some of his own re
   * 说明：该方法只适用于Windows环境下
     * 新建一个txt文本文件
     * 在文件中写入以下内容
-      ```
+
+      ```dos
         @echo off
         adb shell input keyevent 82
         pause
       ```
+      
     * 另存为`.bat`文件
     * 在项目运行之后，需要调出悬浮窗Reload重新刷新时，双击这个脚本就可以打开悬浮窗了
 
