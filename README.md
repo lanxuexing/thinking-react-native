@@ -216,6 +216,7 @@ This is some of my own to react-native learning footprint and some of his own re
       
     * 另存为`.bat`文件
     * 在项目运行之后，需要调出悬浮窗Reload重新刷新时，双击这个脚本就可以打开悬浮窗了
+    * 当然你也可以直接使用快捷键Ctrl + M
 
 
 ## React Native IDE开发工具
