@@ -7,6 +7,7 @@ This is some of my own to react-native learning footprint and some of his own re
   - [Windows环境下React-Native环境配置详解](#windows环境下React-Native环境配置详解)
   - [Mac环境下React-Native环境配置详解](#Mac环境下React-Native环境配置详解)
   - [管理React-Native库的版本](#管理React-Native库的版本)
+  - [脚本命令实现Android模拟器弹出React-Native调试悬浮窗](#脚本命令实现Android模拟器弹出React-Native调试悬浮窗)
 - React Native IDE开发工具
   - [WebStorm之React-Native开发环境配置](#WebStorm之React-Native开发环境配置)
 - React Native 屏幕适配
@@ -200,6 +201,19 @@ This is some of my own to react-native learning footprint and some of his own re
     * 新的npm包会包含更新在运行reac-native init命令生成的一些动态文件，例如init创建项目的时候会生成iOS和Android，
      的子项目，我们可以通过以下的命令进行获取到最新的代码
     * 命令行查询：`react-native upgrade`
+
+
+### 脚本命令实现Android模拟器弹出React-Native调试悬浮窗
+  * 说明：该方法只适用于Windows环境下
+    * 新建一个txt文本文件
+    * 在文件中写入以下内容
+      ```
+        @echo off
+        adb shell input keyevent 82
+        pause
+      ```
+    * 另存为`.bat`文件
+    * 在项目运行之后，需要调出悬浮窗Reload重新刷新时，双击这个脚本就可以打开悬浮窗了
 
 
 ## React Native IDE开发工具
