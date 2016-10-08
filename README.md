@@ -484,6 +484,12 @@ This is some of my own to react-native learning footprint and some of his own re
     * Flexbox布局的主体思想是元素可以改变大小以适应可用空间，当可用空间变大，Flex元素将伸展大小以填充可用空间，当Flex元素超出可用空间时将自动缩小。 
     * 按照伸缩流的方向布局，伸缩容器有主轴和交叉轴组成，主轴既可以是水平轴，也可以是垂直轴。
 
+
+  - * 视频讲解
+    * [优酷](http://v.youku.com/v_show/id_XMTYzODIxMzc5Mg==.html?f=27615900&o=1)
+    * [YouTuBe](https://www.youtube.com/watch?v=lKs15YIgQ_g&index=3&list=PLC_rYRxEnwQGLQqrHR0aho33U6DCeJamC)
+
+
   - * FlexBox的属性(React Native支持的)
     * flex:1
       * 块级伸缩容器
@@ -585,6 +591,8 @@ This is some of my own to react-native learning footprint and some of his own re
   * [ReactNative组件架构设计](https://segmentfault.com/a/1190000004161358)
   * [React Native所有开源组件](https://js.coach/react-native)
   * [React Native控件之Touchable*系列组件详解](http://blog.csdn.net/developer_jiangqq/article/details/50630984)
+  * [组件优酷视频讲解](http://v.youku.com/v_show/id_XMTYzODIxMzY2MA==.html?f=27615900&o=1)
+  * [组件YouTuBe视频讲解](https://www.youtube.com/watch?v=ESjUmGm4Rh4&list=PLC_rYRxEnwQGLQqrHR0aho33U6DCeJamC&index=2)
 
 ### 专题类
     
@@ -635,6 +643,8 @@ This is some of my own to react-native learning footprint and some of his own re
   * [React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
   * [React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html)
   * [Redux基本使用](http://v.ku6.com/show/XPQZ9Ir3aSw3KNpO12tmEg...html?from=my)
+  * [Redux架构优酷视频讲解](http://v.youku.com/v_show/id_XMTY1OTM5OTc2OA==.html?&f=27615900&from=y1.2-3.4.4&spm=a2h0j.8191423.item_XMTY1OTM5OTc2OA==.A)
+  * [Redux架构YouTuBe视频讲解](https://www.youtube.com/watch?v=JlYwmoJyM34&index=4&list=PLC_rYRxEnwQGLQqrHR0aho33U6DCeJamC)
 
 ### 工具类
 
@@ -800,6 +810,11 @@ This is some of my own to react-native learning footprint and some of his own re
         return false;
     };
   ```
+
+
+  * [优酷视频讲解](http://v.youku.com/v_show/id_XMTY2MDY5MDA1Mg==.html?&f=27615900&from=y1.2-3.4.6&spm=a2h0j.8191423.item_XMTY2MDY5MDA1Mg==.A)
+
+  * [YouTuBe视频讲解](https://www.youtube.com/watch?v=LoZe_uYey3M&list=PLC_rYRxEnwQGLQqrHR0aho33U6DCeJamC&index=6)
 
 
 ### 访电商客户端首页顶部滑动菜单
