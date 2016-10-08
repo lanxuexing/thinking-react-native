@@ -16,6 +16,8 @@ This is some of my own to react-native learning footprint and some of his own re
   - [九个生命周期一个组件渲染及其讲解](#九个生命周期一个组件渲染及其讲解)
 - React Native 布局篇
   - [FlexBox盒子模型及布局](#FlexBox盒子模型及布局)
+- React Native 动画篇
+  - [动画文档详解](#动画文档详解)
 - React Native 学习资料
   - [文档类](#文档类)
   - [组件类](#组件类)
@@ -575,6 +577,22 @@ This is some of my own to react-native learning footprint and some of his own re
 
     - **Example**
     * [演示案例](https://github.com/lan-xue-xing/thinking-react-native/blob/master/FlexBox/code/FlexBox.js)
+
+
+## React Native 动画篇
+### 动画文档详解
+  
+  * [React-Native动画文档手册](http://browniefed.com/react-native-animation-book/)
+  * [React-Native动画使用指南](http://reactnative.cn/docs/0.31/animations.html#content)
+  * [React-Native动画API](http://reactnative.cn/docs/0.31/animated.html#content)
+  * [React-Native动画之Easing模块](http://facebook.github.io/react-native/docs/easing.html)
+  * [贝塞尔曲线讲义](https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Applications)
+  * [贝塞尔曲线](http://cubic-bezier.com/#.17,.67,.83,.67)
+  * [React-Native Animated动画详解](http://www.alloyteam.com/2016/01/reactnative-animated/?utm_source=tuicool&utm_medium=referral)
+  * [React-Native动画研究与实践](http://web.jobbole.com/86399/)
+  * [React-Native动画初探之加载动画](http://web.jobbole.com/84322/)
+  * [React-Native开发之Animations动画](http://blog.csdn.net/hello_hwc/article/details/51775696)
+  * [React-Native动画进阶之Animated动画库](http://www.lcode.org/react-native%E8%BF%9B%E9%98%B6%E4%B9%8Banimated%E5%8A%A8%E7%94%BB%E5%BA%93%E8%AF%A6%E8%A7%A3-%E5%AE%9E%E4%BE%8B%E7%AF%8765/)
 
 
 ## React Native 学习资料
