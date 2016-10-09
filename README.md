@@ -487,7 +487,7 @@ This is some of my own to react-native learning footprint and some of his own re
     * 按照伸缩流的方向布局，伸缩容器有主轴和交叉轴组成，主轴既可以是水平轴，也可以是垂直轴。
 
 
-  - * 视频讲解
+  - **视频讲解**
     * [优酷](http://v.youku.com/v_show/id_XMTYzODIxMzc5Mg==.html?f=27615900&o=1)
     * [YouTuBe](https://www.youtube.com/watch?v=lKs15YIgQ_g&index=3&list=PLC_rYRxEnwQGLQqrHR0aho33U6DCeJamC)
 
