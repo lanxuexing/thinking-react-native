@@ -492,7 +492,7 @@ This is some of my own to react-native learning footprint and some of his own re
     * [YouTuBe](https://www.youtube.com/watch?v=lKs15YIgQ_g&index=3&list=PLC_rYRxEnwQGLQqrHR0aho33U6DCeJamC)
 
 
-  - * FlexBox的属性(React Native支持的)
+  - **FlexBox的属性(React Native支持的)**
     * flex:1
       * 块级伸缩容器
 
