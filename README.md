@@ -1351,7 +1351,7 @@ This is some of my own to react-native learning footprint and some of his own re
     //设置默认值，可以提供外接口
     static get defaultProps() {
         return {
-            duration: 1000
+            duration: 3000
         }
     }
 
@@ -1501,9 +1501,13 @@ This is some of my own to react-native learning footprint and some of his own re
     }
   ```
 
+  - **效果图**
+
+    ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/SmallFeature/bannerView/img/banner.gif)
+
   - **案例代码**
   
-    * [Example](https://github.com/lan-xue-xing/thinking-react-native/blob/master/SmallFeature/bannerView)
+    * [Example](https://github.com/lan-xue-xing/thinking-react-native/blob/master/SmallFeature/code/bannerView)
 
 
 **[⬆ 回到目录](#内容目录)**

@@ -23,7 +23,7 @@ export default class BannerView extends Component {
     //设置默认值，可以提供外接口
     static get defaultProps() {
         return {
-            duration: 1000
+            duration: 3000
         }
     }
 
