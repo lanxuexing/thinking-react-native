@@ -10,6 +10,7 @@ This is some of my own to react-native learning footprint and some of his own re
   - [脚本命令实现Android模拟器弹出React-Native调试悬浮窗](#脚本命令实现Android模拟器弹出React-Native调试悬浮窗)
 - React Native IDE开发工具
   - [WebStorm之React-Native开发环境配置](#WebStorm之React-Native开发环境配置)
+  - [Visual-Studio-Code之React-Native开发环境配置](#Visual-Studio-Code之React-Native开发环境配置)
 - React Native 屏幕适配
   - [react-native-screen-adapter](#react-native-screen-adapter)
 - React Native 生命周期
@@ -255,7 +256,32 @@ This is some of my own to react-native learning footprint and some of his own re
     3.语法选择
       * React Native使用的是JSX语法
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Javascript.png)
+
+
+### Visual-Studio-Code之React-Native开发环境配置
+
+  - **Visual Studio Code下载地址**
+    * [微软官方下载](https://code.visualstudio.com/Download)
+
+  - **开发环境配置**
+    1. 安装React-Native开发相关的扩展插件
+        * 软件界面左边栏应用商店中搜索以下扩展插件安装即可<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Visual-Studio-Code01.png)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Visual-Studio-Code02.png)
+
+    1. 若安装之后没有提示则按以下教程操作
+        * [Visual Studio Code之React-Native代码智能提示](https://besttao.github.io/2016/10/25/%E4%BD%BF%E7%94%A8VSCode%E5%BC%80%E5%8F%91React-Native%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/)
         
+    1. 部分使用教程
+        * gif图演示<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/smart01.gif)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/smart02.gif)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/smart03.gif)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/smart04.gif)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/smart05.gif)
+
+        * 其他设置参考扩展插件中的使用以及配置,设置通过菜单栏文件→首选项→用户设置，在setting.json中设置保存即可。
+
 
 ## React Native屏幕适配
 ### react-native-screen-adapter
