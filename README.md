@@ -11,6 +11,7 @@ This is some of my own to react-native learning footprint and some of his own re
 - React Native IDE开发工具
   - [WebStorm之React-Native开发环境配置](#WebStorm之React-Native开发环境配置)
   - [Visual-Studio-Code之React-Native开发环境配置](#Visual-Studio-Code之React-Native开发环境配置)
+  - [Sublime之React-Native开发环境配置](#Sublime之React-Native开发环境配置)
 - React Native 屏幕适配
   - [react-native-screen-adapter](#react-native-screen-adapter)
 - React Native 生命周期
@@ -281,6 +282,24 @@ This is some of my own to react-native learning footprint and some of his own re
         ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/smart05.gif)
 
         * 其他设置参考扩展插件中的使用以及配置,设置通过菜单栏文件→首选项→用户设置，在setting.json中设置保存即可。
+
+
+### Sublime之React-Native开发环境配置
+
+  - **Sublime下载地址**
+    * [官方下载](http://www.sublimetext.com/3)
+
+  - **开发环境配置**
+    1. 安装React-Native开发相关的扩展插件
+        * [把SublimeText配置成ReactNative的IDE](http://www.jianshu.com/p/bbb2e998a2e2)
+        * [Sublime Text常用插件总结及Package Control安装方法](http://9iphp.com/web/html/1260.html)
+        * [sublime text 3 插件推荐](https://www.zhihu.com/question/24736400)
+    1. 插件如下，其中有JQuery和HTML5是我个人自己添加的。
+        * 图片展示<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/sublime01.png)
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/sublime02.png)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/sublime03.png)
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/sublime04.png)<br/>
 
 
 ## React Native屏幕适配
