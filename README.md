@@ -249,15 +249,26 @@ This is some of my own to react-native learning footprint and some of his own re
 
     1.智能代码补全提醒插件
       * [github下载以及安装使用说明](https://github.com/virtoolswebplayer/ReactNative-LiveTemplate)
+      * 我自己修改了这个插件，补充了不少没有的API，需要的可以在自行下载，文件在资源目录里[源文件](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/LiveTemplates)
+      * 部门图文讲解使用教程<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/newRN.gif)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/style.gif)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/defaultPrpps.gif)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/liveTemplates01.png)<br/>
+        ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/liveTemplates02.png.gif)<br/>
+      * 注意事项
+          * 写样式的时候，首先按下`command + j(Mac系统),Ctrl + j(Windows系统)`, 然后输入属性名的首字母，如输入bor 自动提示 borderColor, borderWidth, .....
+          * 写组件标签的时候记住的可以直接写名称，然后按Tab(制表符)键，即可生成对
+          * 不记住的直接输入首字母即可有提示，修改模版可以参照上边的gif图演示
 
     2.库文件添加
-      * 详细流程以及需要下载的库
+      * 详细流程以及需要下载的库<br/>
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Libraries.png)
 
     3.语法选择
-      * React Native使用的是JSX语法
-      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Javascript.png)
-
+      * React Native使用的是JSX语法<br/>
+      ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Javascript.png)<br/>
+      
 
 ### Visual-Studio-Code之React-Native开发环境配置
 
