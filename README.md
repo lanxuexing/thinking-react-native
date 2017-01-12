@@ -40,7 +40,7 @@ This is some of my own to react-native learning footprint and some of his own re
   - [轮播图的简单实现](#轮播图的简单实现)
   - [视频播放的简单实现](#视频播放的简单实现)
   - [动态改变组件style样式](#动态改变组件style样式)
-  - [View组件的一些使用技巧](View组件的一些使用技巧)
+  - [View组件的一些使用技巧](#View组件的一些使用技巧)
 
 
 ## React Native环境安装
