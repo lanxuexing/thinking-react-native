@@ -39,6 +39,7 @@ This is some of my own to react-native learning footprint and some of his own re
   - [混合开发之Android篇](#混合开发之Android篇)
   - [轮播图的简单实现](#轮播图的简单实现)
   - [视频播放的简单实现](#视频播放的简单实现)
+  - [动态改变组件style样式](#动态改变组件style样式)
 
 
 ## React Native环境安装
@@ -1000,6 +1001,28 @@ This is some of my own to react-native learning footprint and some of his own re
   ```
 
 
+  * 注意事项
+    - React Native版本大于0.35可以直接使用现有的api
+
+    ```javascript
+        import { Keyboard, TextInput } from 'react-native';
+        ...
+        render() {
+            return (
+            <TouchableWithoutFeedback onPress={()=>{ Keyboard.dismiss() }}>
+                <View style={styles.container}>
+                    <Text style={styles.welcome}>
+                        Welcome to React Native!
+                    </Text>
+                    <TextInput />
+                </View>
+                </TouchableWithoutFeedback>
+            );
+        }
+        ...
+    ``` 
+
+
 ### React-Native引入第三方组件链接库导入配置技巧
 
   * React-Native版本在0.27之后，`rnpm link`命令已经被合并到React Native CLI，所以只需要简单运行一下命令：
@@ -1800,6 +1823,129 @@ This is some of my own to react-native learning footprint and some of his own re
   
     * [Example](https://github.com/lan-xue-xing/thinking-react-native/blob/master/SmallFeature/videoView/code/VideoDetail.js)
     * 更详细的请看我另外写的Demo小案例[BoBoClient](https://github.com/lan-xue-xing/BoBo)
+
+
+### 动态改变组件style样式
+
+  - **案列代码**
+
+  ```JavaScript
+    ...
+    constructor(props) {
+        super(props);
+        this.state = {
+            appColor: 'red'
+        }
+    }
+
+    render() {
+        return (
+        <View style={styles.container}>
+            {/** 文字的颜色可以动态改变 **/}
+            <Text style={[styles.welcome, {color: this.state.appColor}]} onPress={()=>this.onTextPress()}>
+                Welcome to React Native!
+            </Text>
+        </View>
+        );
+    }
+
+    onTextPress() {
+        this.setState({
+            appColor: 'green'
+        });
+    }
+    ...
+
+    ```
+
+
+### View组件的一些使用技巧
+  
+  - **触摸事件**
+  ```javascript
+    <View style={styles.container} 
+        onTouchStart={this._onTouchStart} //触摸开始
+        onTouchMove={this._onTouchMove}   //触摸移动
+        onTouchEnd={this._onTouchEnd}     //触摸结束
+        onTouchCancel={this._onTouchCancel}
+        onTouchEndCapture={this._onTouchEndCapture}
+    >
+    ...
+    _onTouchStart(event) {
+        console.log(event.nativeEvent); //输出参数有9个,见注释部分，事件存储于nativeNative对象中
+    }
+    /**
+    nativeEvent
+        changedTouches - Array of all touch events that have changed since the last event.
+        identifier - The ID of the touch.
+        locationX - The X position of the touch, relative to the element.
+        locationY - The Y position of the touch, relative to the element.
+        pageX - The X position of the touch, relative to the root element.
+        pageY - The Y position of the touch, relative to the root element.
+        target - The node id of the element receiving the touch event.
+        timestamp - A time identifier for the touch, useful for velocity calculation.
+        touches - Array of all current touches on the screen.
+    **/
+  ```
+
+  * 更多使用详情可查看官网--[React-Native官网](https://facebook.github.io/react-native/docs/view.html)
+
+  * 触摸事件的传递机制
+  ```javascript
+    <View style={styles.container} 
+        pointerEvents='none'
+    >
+    /**
+        React Native框架中，触摸事件总是被传递到最上层的组件。主要是pointerEvents属性('box-none', 'none', 'box-only', 'auto')。
+        none：发生在本组件与本组件的子组件上的触摸事件都会交给本组件的父组件处理
+        box-none：发生在本组件显示范围内（但非本组件的子组件显示范围内）的事件将交由本组件的父组件处理，发生在本组件的子组件显示范围内的触摸事件由子组件处理
+        box-only：发送在本组件显示范围内的触摸事件将全部由本组件处理（即使触摸事件发生在本组件的子组件显示范围内）
+        auto：是组件不同而不同，视图可以作为触控事件的目标
+
+        注意事项：继承了View组件的其他组件也具有此属性
+    **/
+  ```
+
+  * 组件的变形
+  ```javascript
+  const styles = StyleSheet.create({
+    container: {
+        transform: [{roate: '45deg'}]
+    }
+  }
+    /**
+        transform:
+            [
+                {translateX: number},   //平移
+                {scale: number},        //缩放
+                {rotate: string},       //旋转
+                {skewX: string},        //倾斜
+                {perspective: number},  //3D变换
+                ...
+            ]
+    **/
+  ```
+
+  * 测量相关的回调函数
+  ```javascript
+   <View style={styles.container} 
+        onLayout={this._onLayout}
+    >
+    ...
+    onLayout(event) {
+        let {x,y,height,width} = event.nativeEvent.layout; //解构赋值得到所有信息
+        console.log(event.nativeEvent);
+    }
+    /**
+        onLayout属性可以获取组件的宽高位置信息，信息被封装在nativeEvent的layout对象中，见示例
+        判断屏幕的放置状态可以使用，height > width 为竖屏，反之为横屏,在Text组件中还可以获取到文字的长度等
+        在ScrollView中还可以利用 backgroundColor:"rgba(255,0,0,"+opacity+")" 的方式和onScroll={(e) => {...}}
+        做一些根据滑动距离动态改变View透明度等
+
+        注意事项：继承了View组件的其他组件也具有此属性，onLayout事件会在组件被加载或者组件布局被改变的时候触发
+                 框架计算好后立即发出，此时有可能新的布局没有被渲染到屏幕上
+    **/
+  ```
 
 
 **[⬆ 回到目录](#内容目录)**
