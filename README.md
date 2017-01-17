@@ -271,7 +271,10 @@ This is some of my own to react-native learning footprint and some of his own re
     3.语法选择
       * React Native使用的是JSX语法<br/>
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Javascript.png)<br/>
-      
+
+  - **WebStorm使用教程**
+  
+      [使用教程](http://frontenddev.org/article/webstorm-portal-2-configuration.html)
 
 ### Visual-Studio-Code之React-Native开发环境配置
 
