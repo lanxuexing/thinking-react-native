@@ -264,8 +264,11 @@ This is some of my own to react-native learning footprint and some of his own re
           * 写组件标签的时候记住的可以直接写名称，然后按Tab(制表符)键，即可生成对
           * 不记住的直接输入首字母即可有提示，修改模版可以参照上边的gif图演示
 
-    2.库文件添加
-      * 详细流程以及需要下载的库<br/>
+    2.类型定义文件添加
+      * 这里强烈添加微软维护的类型定义文件
+        * [react-native.d.ts和react.d.ts](https://github.com/Microsoft/vscode-react-native/tree/master/ReactTypings)
+        * 如果添加了微软维护的类型定义文件,则下边的不需要再添加
+      * 详细流程以及需要下载的类型定义文件<br/>
       ![image](https://github.com/lan-xue-xing/thinking-react-native/raw/master/ResourceFile/ImageResource/Libraries.png)
 
     3.语法选择
